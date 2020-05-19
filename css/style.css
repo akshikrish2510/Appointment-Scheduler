@@ -1,0 +1,270 @@
+body{
+ 		color: #ffffff;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 300;
+		overflow-x: hidden; /* prevent horizontal scrollbar from appearing */
+    background-image: url("../Images/image08.2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+	}
+
+/* start header */
+  header{
+  		min-height: 20px;
+  		padding-top: 10px;
+  		padding-bottom: 10px;
+      height:50px;
+      background-color: #303030;
+  	}
+  header .fa{
+  		color: #28a7e9;
+  	}
+  header span{
+  		font-weight: bold;
+  		padding-right: 10px;
+  		padding-left: 4px;
+  	}
+  header a{
+  		color: #999;
+  		font-weight: 600;
+  	}
+  header .social-icon{
+  		text-align: right;
+  	}
+/* end header */
+
+/* start nagivation */
+nav{
+		background: #fff;
+		border: none;
+		box-shadow: none;
+    font-weight: 500;
+		height: 70px;
+		line-height: 40px;
+    vertical-align: middle;
+}
+
+.navbar-link{
+  color:#737373;
+  font-weight: 500;
+  float:right;
+}
+.nav-link:hover, .navbar-link:hover {
+  color:#4d4d4d;
+  text-decoration: none;
+}
+#Navbar{
+  color:#737373;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 70px;
+}
+#navbar-brand {
+  color:#737373;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+}
+.navbar-toggler{
+  color:#737373;
+}
+/* end navigation */
+
+/* start Appointment Form */
+.form {
+  box-shadow:  0px 2px 6px -1px rgba(0,0,0,.12);
+  margin-top:5%;
+}
+.my-form{
+  padding: 5%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 10%;
+  background-color: #fff;
+}
+.image img {
+  width: 520px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-bottom: 21.5%;
+}
+/* end Appointment Form */
+
+/* start input form */
+input, select, .form-control{
+  background-color: #bfbfbf;
+  border-radius: 45px;
+  font-size: 15px;
+  height: 40px;
+  border: none;
+  padding-left: 15px;
+  width:100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  outline: none;
+  color: #4d4d4d;
+}
+input::placeholder {
+ color: #4d4d4d;
+}
+input:active, input:link, input:visited, input:hover,
+select:active, select:link, select:visited, select:hover{
+  height: 50px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}
+select{
+  color: #4d4d4d;
+  font-size: 15px;
+  font-weight: 500;
+}
+/* end input form */
+
+/* start button */
+button {
+  border-color:  #fff;
+  color: #fff;
+  width: auto;
+  background: #3498db;
+  font-size: 20px;
+  padding:3px;
+  padding-left:18px;
+  padding-right:18px;
+  border-radius: 45px;
+  cursor: pointer;
+  margin-bottom:5%;
+  margin-top:3%;
+}
+button:hover {
+    box-shadow: 0 0 10px 40px  #22232a inset, 0 0 10px 4px  #3498db;
+    color: #656d79;
+}
+
+
+/* start cards */
+.doc-cards {
+  overflow: hidden;
+  margin-bottom:5%;
+}
+
+.filterDiv {
+  display: none; /* Hidden by default */
+}
+
+.show {
+  display: block;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    transform: rotateY(180deg);
+}
+
+.fa-map-marker{
+  color:#28a7e9;
+}
+
+.mainflip {
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    transform: rotateY(-180deg);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    backface-visibility: hidden;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    height: 450px;
+    width: 350px;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.card-title{
+  color:#28a7e9;
+}
+.card-text{
+  color: #303030;
+}
+.description{
+  color: #303030;
+  text-align: left;
+}
+.checked {
+  color: orange;
+}
+.fa fa-star{
+  border-color: orange;
+}
+/* end cards */
+
+/* start footer */
+.footer-section {
+  background: #303030;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #28a7e9;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+/* .cta-text span {
+  color: #757575;
+  font-size: 15px;
+} */
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+/* end footer */

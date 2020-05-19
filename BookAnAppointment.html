@@ -1,0 +1,658 @@
+<html>
+<head>
+  <title>Appointment Scheduler</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap.css">
+  <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+  <!-- start header -->
+  <header>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 col-sm-4 col-xs-12">
+                  <i class="fa fa-phone"></i><span> Phone</span>012-345-6789
+              </div>
+              <div class="col-md-4 col-sm-5 col-xs-14">
+                  <p><i class="fa fa-envelope-o"></i><span> Email</span><a href="#">abc@OneWayHealth.com</a></p>
+              </div>
+              <div class="col-md-5 col-sm-4 col-xs-12">
+                <div class="social-icon">
+                    <span>Meet us on</span>
+                    <a href="http://google.com/+"><i class="fa fa-google-plus"></i></a><span></span>
+                    <a href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a><span></span>
+                    <a href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a><span></span>
+                    <a href="http://twitter.com/"><i class="fa fa-twitter"></i></a><span></span>
+                    <a href="http://instagram.com/"><i class="fa fa-instagram"></i></a><span></span>
+                </div>
+             </div>
+          </div>
+      </div>
+  </header>
+  <!-- end header -->
+
+  <!-- start navigation -->
+  <nav class="navbar navbar-light navbar-expand-md navbar-default" role="navigation" id="NavBar">
+      <div class="container">
+         <a class="navbar-brand" href="./index.html" id="navbar-brand"><img src="Images/logo2.jpg" height="50" width="35">OneWay Health</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="Navbar">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item"><a class="nav-link"> HOME</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"> ABOUT</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"> DOCTOR'S PROFILE</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="#" href="#" style="color: #28a7e9;"> BOOK AN APPOINTMENT</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#"> CONTACT</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <!-- end navigation -->
+
+  <!-- start form -->
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-12">
+        <div class="form d-flex justify-content-between">
+          <div class="image">
+            <img src="Images/image08.jpg">
+          </div>
+          <form action="" class="my-form">
+            <h2 class="font-weight-bold mb-3 " style="color:#000;">BOOK AN <span style="color:#28a7e9;">APPOINTMENT</span></h2>
+            <p class="mdb-color-text" style="color:#000;">Select prefered doctor and time slot to book an in-clinic or video consultation</p>
+            <div class="row">
+                <div class="col">
+                  <select name="title" class="title" id="title">
+                      <option disabled="disabled" selected="selected">Title</option>
+                      <option>Mr.</option>
+                      <option>Ms.</option>
+                      <option>Mrs.</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <select name="gender" class="gender" id="gender">
+                      <option disabled="disabled" selected="selected">Gender</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                  </select>
+                  </div>
+                <div class="col">
+                  <input placeholder="Date of Birth" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="dob" />
+                </div>
+            </div>
+            <input placeholder='Full Name' type="text" id="FullName">
+  			    <input placeholder='Address' type="text" id="Address">
+            <div class="row">
+                <div class="col">
+                  <input placeholder='Email Adress' type="text" id="email">
+                </div>
+                <div class="col">
+                  <input placeholder='Phone number' type="text" id="PhnNum">
+                </div>
+            </div>
+            <select name="Department" class="department" id="department" onchange="ChangeDepartment()">
+                <option disabled="disabled" selected="selected">Department</option>
+                <option value="Dermatologist">Dermatologists</option>
+                <option value="Gynecologists">Gynecologists</option>
+                <option value="Obstetrician">Obstetrician</option>
+                <option value="Cardiologist">Cardiologists</option>
+            </select>
+            <br><br><br>
+              <!-- <div class="float-right">
+                <button type="button">Show Available Doctors</button>
+              </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end form -->
+
+  <!-- start doc cards -->
+  <div class="doc-cards">
+      <div class="row">
+        <div class="filterDiv Dermatologist">
+                <!-- start Doctor -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip">
+                        <div class="mainflip">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="Images/Doctors/Dermatologist01.png" alt="card image"></p>
+                                        <h4 class="card-title">Dr Shruti Lakhnpal Tondon</h4>
+                                        <p class="card-text" style="font-size: 18px;">Dermatologist</p>
+                                        <p class="card-text" style="font-size: 15px;"> Senior Consultant, 18 years of experience , MBBS, MD</p>
+                                        <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i> SHALBY HOSPITAL, AHMEDABAD</p>
+                                        <span class="fa fa-star fa-2x checked"></span>
+                                        <span class="fa fa-star fa-2x checked"></span>
+                                        <span class="fa fa-star fa-2x checked"></span>
+                                        <span class="fa fa-star fa-2x"></span>
+                                        <span class="fa fa-star fa-2x"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card-body text-center mt-4">
+                                        <p class="card-text">
+                                          <ul>
+                                            <li class="description">Dr Tondon is a renowned dermatologist in India.</li>
+                                            <li class="description">With a thriving practise of over 18 years, she is an expert in cosmetic surgery.</li>
+                                            <li class="description">She is a specialist in laser and radio frequency procedures for skin tags (cosmetic surgery), electrocautery and biopsies, chemical peels.</li>
+                                          </ul>
+                                        </p>
+                                        <button> Book an Appointment </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Gynecologists Obstetrician">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Gynecologist02.png" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Sumana Manohar</h4>
+                                  <p class="card-text" style="font-size: 18px;">Gynaecologist and Obstetrician</p>
+                                  <p class="card-text" style="font-size: 15px;">Senior Consultant, 23 years of experience , MBBS, FRCOG, MRCOG</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>APOLLO HOSPITALS, GREAMS ROAD, CHENNAI</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x "></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Currently associated as gynecologist at Apollo Greams Road Hospitals, Chennai</li>
+                                      <li class="description">Expertise in Obstetrics and Gynaecology, Obstetrics and Gynaecology - Laparoscopic & Hyster, Obstetrics and Gynaecology - Robotic Surgeon</li>
+                                      <li class="description">Interests are Obstetrics and Gynaecology, Laparoscopic & Hyster, Robotic Surgeries, Rapid Access and Colposcopy and Antenatal Services and Ambulatory Obstetrics</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Cardiologist">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Cardiologist01.png" alt="card image"></p>
+                                  <h4 class="card-title">Dr Devi Prasad Shetty</h4>
+                                  <p class="card-text" style="font-size: 18px;">Cardio-Thoracic Surgeon</p>
+                                  <p class="card-text" style="font-size: 15px;">Chairman, 34 years of experience , MBBS, MS, FRCS</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>NARAYANA MULTISPECIALITY HOSPITAL, BANGALORE</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr. Devi Prasad Shetty is one of the most renowned Cardiothoracic Surgeon in Bangalore.</li>
+                                      <li class="description">Dr. Shetty has been awarded 'Padma Shri', the fourth highest civilian award in India and 'Padma Bhushan', the third-highest civilian award by the Government of India for his contribution to healthcare.</li>
+                                      <li class="description">With an experience of over 34+ years, he has performed over 15,000 heart operations among which 5000 were performed on kids.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Dermatologist">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Dermatologist02.png" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Gopi Krishna Maddali</h4>
+                                  <p class="card-text" style="font-size: 18px;">Dermatologist</p>
+                                  <p class="card-text" style="font-size: 15px;"> 30 years of experience , MBBS, MD</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i> SHARDA HOSPITAL, GREATER NOIDA</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x"></span>
+                                  <span class="fa fa-star fa-2x"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr. Gopi Krishna Maddali is a well-known Dermatologist with experience of over 30 years.</li>
+                                      <li class="description">He offers treatment for all Dermatological problems, Venerology, and leprosy.</li>
+                                      <li class="description">Being the core counselor of APSACS (NACO) he has conducted training programs on HIV/AIDS-related topics for other medical officers.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Cardiologists">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Cardiologist02.png" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Naresh Trehan</h4>
+                                  <p class="card-text" style="font-size: 18px;">Cardiac Surgeon</p>
+                                  <p class="card-text" style="font-size: 15px;">Chairman, 40 years of experience , MBBS</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>MEDANTA - THE MEDICITY, GURGAON</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Currently associated as the chairman and managing director and is the chief cardiac surgeon at Medanta hospital, Gurgaon.</li>
+                                      <li class="description">Considered India's most successful cardiac surgeon with experience of over 40 years</li>
+                                      <li class="description">Former president of International Society for Minimally Invasive Cardiac Surgery (ISMICS), USA, and member of prestigious orgainsations like Society of Thoracic Surgeons of USA and The European Association for Cardio-thoracic Surgery, to name a few.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Gynecologists">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Gynecologist01.jpg" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Manish Banker </h4>
+                                  <p class="card-text" style="font-size: 18px;">Infertility Specialist</p>
+                                  <p class="card-text" style="font-size: 15px;"> Director, 22 years of experience , MBBS, MD, Diploma</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>NOVA IVI FERTILITY, AHMEDABAD</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr. Manish Banker is a renowned infertility specialist in India.</li>
+                                      <li class="description">With a thriving experience of 22+ years, he has successfully treated over 15,000 cases of infertility across the country.</li>
+                                      <li class="description">He has completed his MBBS & MD (Gold Medalist while pursuing MD) from the Gujrat University. Following which he did a diploma in IVF from University of Giel, Germany.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Dermatologist">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Dermatologist03.jpg" alt="card image"></p>
+                                  <h4 class="card-title">	Dr Ramji Gupta</h4>
+                                  <p class="card-text" style="font-size: 18px;">Dermatologist</p>
+                                  <p class="card-text" style="font-size: 15px;"> Senior Consultant, 42 years of experience , MBBS, MD, DVD</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i> BLK SUPER SPECIALITY HOSPITAL, NEW DELHI</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr Gupta with an experience of over 42 years, is counted amongst one of the most experienced & favoured dermatologist in India.</li>
+                                      <li class="description">Completing his MD (dermatology) & MBBS, he did his super specialization in pulse therapy.</li>
+                                      <li class="description">He is well-known for his research work on various skin diseases, specially treatment of pemphigus.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Obstetrician">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Obstetrician01.png" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Geeta Komar</h4>
+                                  <p class="card-text" style="font-size: 18px;">Obstetrician</p>
+                                  <p class="card-text" style="font-size: 15px;">Consultant,10 years of experience,MBBS, MD</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>FARIDABAD, INDIA</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x "></span>
+                                  <span class="fa fa-star fa-2x "></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr. Shikha Parashar Sharma is a well known Obstetrician and Gynaecologist with experience of more than 10 years.</li>
+                                      <li class="description">She is skilled in offering treatments for Obstetrics problems.</li>
+                                      <li class="description">After graduating with MBBS from Rajiv Gandhi Institute of Medical Science in 2009, she pursued MD in Obstetrics and Gynaecology from Tata Main Hospital Jamshedpur in 2014.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Dermatologist">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Dermatologist04.jpg" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Ravichandran G</h4>
+                                  <p class="card-text" style="font-size: 18px;">Dermatologist</p>
+                                  <p class="card-text" style="font-size: 15px;">Consultant, 32 years of experience , MBBS, MD, Diploma</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i> APOLLO HOSPITALS, GREAMS ROAD, CHENNAI</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">He specializes in treating Vitiligo and has conducted more than 2000 operations. </li>
+                                      <li class="description">Completing his MD (dermatology) & MBBS, he did his super specialization in pulse therapy.</li>
+                                      <li class="description">He has many presentations and publications to his credit at the National and International levels. </li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Cardiologists">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Cardiologist03.jpg" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Naresh Trehan</h4>
+                                  <p class="card-text" style="font-size: 18px;">Interventional Cardiologist</p>
+                                  <p class="card-text" style="font-size: 15px;">Consultant, 38 years of experience , MBBS, MD, FRCP, MRCP, Fellowship</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>FORTIS ESCORTS HEART INSTITUTE, NEW DELHI</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr Ashok Seth is one of the most respected & coveted an interventional cardiologist in India.</li>
+                                      <li class="description">With a thriving experience of over 32 years, he is renowned for performing over 50,000 angiograms and 20,000 angioplasties.</li>
+                                      <li class="description">He has been featured in the “LIMCA” Book of records for performing one of the highest numbers of angiographies and angioplasties in the world.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Gynecologists">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Gynecologist04.jpg" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Sandeep Shah</h4>
+                                  <p class="card-text" style="font-size: 18px;">Infertility Specialist</p>
+                                  <p class="card-text" style="font-size: 15px;">Consultant, 20 years of experience , MBBS, MS, Fellowship</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>NOVA IVI FERTILITY, AHMEDABAD</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x "></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr. Sandeep Shah is an infertility specialist and Reproductive Medicine expert with 20+ years of experience.</li>
+                                      <li class="description">After MBBS and MS, he completed his training in Reproductive Medicine at Tuft University, Boston, USA in 1994.</li>
+                                      <li class="description">He has been key figure in establishing IVF and infertility centers at various places in India, Ghana, Kenya and Bangladesh.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+        <div class="filterDiv Gynecologists Obstetrician">
+          <!-- start Doctor -->
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="image-flip">
+                  <div class="mainflip">
+                      <div class="frontside">
+                          <div class="card">
+                              <div class="card-body text-center">
+                                  <p><img class=" img-fluid" src="Images/Doctors/Gynecologist03.png" alt="card image"></p>
+                                  <h4 class="card-title">Dr. Alka Kriplani</h4>
+                                  <p class="card-text" style="font-size: 18px;">Gynaecologist and Obstetrician</p>
+                                  <p class="card-text" style="font-size: 15px;">Head of Department, 40 years of experience , MBBS, MD, FRCOG, Fellowship, FICMCH, FIMSA</p>
+                                  <p class="card-text" style="font-size: 12px;"><i class="fa fa-map-marker"></i>PARAS HOSPITALS, GURGAON</p>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x checked"></span>
+                                  <span class="fa fa-star fa-2x "></span>
+                                  <span class="fa fa-star fa-2x "></span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="backside">
+                          <div class="card">
+                              <div class="card-body text-center mt-4">
+                                  <p class="card-text">
+                                    <ul>
+                                      <li class="description">Dr. Alka Kriplani is a gynecologist, gyne-lap surgeon and fertility expert with 40+ years of experience.</li>
+                                      <li class="description">She was honored with Padma Shri, the fourth highest Indian civilian award, by the Government of India in 2015 and Dr. B. C. Roy Award in 2007.</li>
+                                      <li class="description">Apart from this, she has won the Rashtriya Gaurav Award (2007), Dr. Nimish Shelat Research Prize in Reproductive Endocrinology (2010) and DGF Women of the Year Award.</li>
+                                    </ul>
+                                  </p>
+                                  <button> Book an Appointment </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end Doctor -->
+        </div>
+      </div>
+    </div>
+  <!-- end doc cards -->
+
+  <!-- start footer section -->
+  <footer class="footer-section">
+          <div class="container">
+              <div class="footer-cta pt-5 pb-5">
+                  <div class="row">
+                      <div class="col-xl-4 col-md-4 mb-30">
+                          <div class="single-cta">
+                              <i class="fa fa-map-marker"></i>
+                              <div class="cta-text">
+                                  <h4>Find us</h4>
+                                  <span>1010 Avenue, New Delhi</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-4 col-md-4 mb-30">
+                          <div class="single-cta">
+                              <i class="fa fa-phone"></i>
+                              <div class="cta-text">
+                                  <h4>Call us</h4>
+                                  <span>9876543210 0</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-xl-4 col-md-4 mb-30">
+                          <div class="single-cta">
+                              <i class="fa fa-envelope-open"></i>
+                              <div class="cta-text">
+                                  <h4>Mail us</h4>
+                                  <span>abc@OneWayHealth.com</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </footer>
+  <!-- end footer section -->
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
