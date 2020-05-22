@@ -2,7 +2,6 @@
 <head>
   <title>Appointment Scheduler</title>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -10,9 +9,9 @@
   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap.css">
   <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/BookAnAppointment.css">
 </head>
-
 
 <body>
 
@@ -44,13 +43,13 @@
   <!-- start navigation -->
   <nav class="navbar navbar-light navbar-expand-md navbar-default" role="navigation" id="NavBar">
       <div class="container">
-         <a class="navbar-brand" href="./index.html" id="navbar-brand"><img src="Images/logo2.jpg" height="50" width="35">OneWay Health</a>
+         <a class="navbar-brand" href="./index.html" id="navbar-brand"><img src="Images/logo2.jpg" height="50" width="65">OneWay Health</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
              <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="Navbar">
               <ul class="navbar-nav ml-auto">
-                  <li class="nav-item"><a class="nav-link"> HOME</a></li>
+                  <li class="nav-item"><a class="nav-link" href="Home.html"> HOME</a></li>
                   <li class="nav-item"><a class="nav-link" href="#"> ABOUT</a></li>
                   <li class="nav-item"><a class="nav-link" href="#"> DOCTOR'S PROFILE</a></li>
                   <li class="nav-item active"><a class="nav-link" href="#" href="#" style="color: #28a7e9;"> BOOK AN APPOINTMENT</a></li>
@@ -62,7 +61,7 @@
   <!-- end navigation -->
 
   <!-- start form -->
-  <div class="container">
+  <div class="container" >
     <div class="row d-flex justify-content-center align-items-center">
       <div class="col-md-12">
         <div class="form d-flex justify-content-between">
@@ -110,7 +109,6 @@
                 <option value="Obstetrician">Obstetrician</option>
                 <option value="Cardiologist">Cardiologists</option>
             </select>
-            <br><br><br>
               <!-- <div class="float-right">
                 <button type="button">Show Available Doctors</button>
               </div> -->
@@ -610,8 +608,8 @@
 
   <!-- start footer section -->
   <footer class="footer-section">
-          <div class="container">
-              <div class="footer-cta pt-5 pb-5">
+          <div class="container fixed-bottom">
+              <div class="footer-cta pt-3 pb-3">
                   <div class="row">
                       <div class="col-xl-4 col-md-4 mb-30">
                           <div class="single-cta">
@@ -627,7 +625,7 @@
                               <i class="fa fa-phone"></i>
                               <div class="cta-text">
                                   <h4>Call us</h4>
-                                  <span>9876543210 0</span>
+                                  <span>9876543210</span>
                               </div>
                           </div>
                       </div>
