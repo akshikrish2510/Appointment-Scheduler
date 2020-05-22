@@ -4,4 +4,39 @@ body{
 		font-weight: 300;
 		overflow-x: hidden;
     background-color: #3B3B39;
-	}
+}
+.main-heading {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-heading video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.main-heading .container {
+  position: relative;
+  z-index: 2;
+}
+
+.main-heading .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 1;
+}
